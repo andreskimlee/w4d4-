@@ -1,0 +1,11 @@
+h1 {
+  font-style: unset 
+}
+
+header {
+  font-style: inherit
+}
+
+body {
+  color:purple
+}

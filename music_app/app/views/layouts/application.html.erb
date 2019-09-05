@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" type="text/css" href="site.css" />
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<h1> Music Cappa </h1>
+  <body>
+  <body style="background-color:powderblue;">
+  
+  <% if logged_in? %>
+   <h1> welcome! </h1> <%= current_user.email %>
+   <form action="<% session_url %>" method="POST">
+   <input type="hidden" name="_method" value="DELETE">
+   <input type="hidden", value ="<%= form_authenticity_token %>", name="authenticity_token"> 
+   <input type="submit" value="Sign Out">
+   </form> 
+  <% end %>
+    <%= yield %>
+  </body>
+</html>
+
